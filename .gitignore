@@ -1,0 +1,20 @@
+# 忽略Gradle相关文件
+.gradle/
+/build/
+
+# 忽略macOS系统文件
+.DS_Store
+
+# 忽略日志文件
+*.log
+
+# 忽略临时文件
+*.tmp
+*.swp
+
+# 忽略IDE配置文件
+.idea/
+*.iml
+
+# 忽略打包输出
+build/libs/ 
