@@ -77,15 +77,28 @@ JMETER_HOME/lib/
 在JMeter的测试计划中，您可以通过以下方式调用这些工具类：
 ```groovy
    // 使用工具类中的方法
-   import static com.yourpackage.com.jmeter.utils.CommonUtils
-   import static com.yourpackage.com.jmeter.utils.EncryptUtils
-   import static com.yourpackage.com.jmeter.utils.HttpUtils
-   // 其他类的导入...
+   // 生成当前时间戳（毫秒）
+   def timestamp = System.currentTimeMillis();
+   // 将值存入 JMeter 变量
+   vars.put("timestamp",timestamp.toString());
+   
+   import com.jmeter.utils.EncryptUtils;
+   
+   // 使用 EncryptUtils 的方法
+   String hash = EncryptUtils.md5("test");
+   
+   vars.put("hash_data",hash.toString());
+   
+   import com.jmeter.utils.RandomUtils;
+   
+   
+   String phone = RandomUtils.randomPhone();
+   String uuid = RandomUtils.uuid();
+   
+   
+   vars.put("phone",phone.toString());
+   vars.put("uuid",uuid);
 
-   // 使用工具类中的方法
-   com.jmeter.utils.CommonUtils.methodName()
-   com.jmeter.utils.EncryptUtils.methodName()
-   com.jmeter.utils.HttpUtils.methodName()
 ```
 
 打包后的文件可以直接用于 JMeter 的 lib 目录中，以便在测试计划中调用。 
