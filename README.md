@@ -28,17 +28,6 @@ JMeter Groovy Library 是一个为 JMeter 用户提供的 Groovy 脚本工具库
    JMETER_HOME/lib/
    ```
 
-3. **在JMeter中使用Groovy脚本**
-
-   在JMeter的测试计划中，您可以通过以下方式调用这些工具类：
-   
-   ```groovy
-   import static your.package.name.ClassName
-   
-   // 使用工具类中的方法
-   ClassName.methodName()
-   ```
-
    请根据具体的工具类和方法进行替换。
 
 ## 常用工具类
